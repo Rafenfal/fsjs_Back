@@ -2,10 +2,11 @@
   "name": "fsjs_back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "start": "nodemon src/app.ts",
+    "lint": "eslint src/**/*.ts  --fix",
+    "start": "cross-env node src/app.ts",
+    "dev": "cross-env nodemon src/app.ts",
     "build": "tsc --project src/"
   },
   "gitHooks": {
@@ -27,6 +28,7 @@
     "@types/node": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
@@ -36,6 +38,10 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "morgan": "~1.9.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
   }
 }
